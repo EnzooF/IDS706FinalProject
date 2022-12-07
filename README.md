@@ -1,15 +1,13 @@
 # Mini-Amazon
-This is a group final project for Duke COMPSCI 516 course.   
-[Demo Link](http://vcm.tinchun.top:5001).  
-[Demo Video](https://youtu.be/QWuk3q39c80)
+This is a group final project for Duke IDS 706 course.
+The original version of the project can refer https://github.com/EnzooF/mini_amazon
 
 All passwords and tokens in the history commits have been removed and revoked. All new passwords and tokens are randomly generated.  
 
 # Team Members
-- Tianjun Mo (tm326): Account and Purchases
-- Zheng Zhang (zz277): Products and Cart
-- Dingzhou Wang (dw299): Inventory and Order Fulfillment
-- Enmiao Feng (ef141): Feedback and Messaging
+- Dingzhou Wang (dw299)
+- Enmiao Feng (ef141)
+
 # Development Workflow
 1. Develop: Update master branch, checkout a new branch from master branch and named as dev_{name}\_{feature}. eg.: dev_tm326_login
 1. Switch to the new branch
