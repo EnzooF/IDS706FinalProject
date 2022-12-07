@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Welcome to Mini-Amazon!</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Start shopping now!</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-1">
+            <div class="container px-4 px-lg-5 mt-5">
+                <h2>Top Sells</h2>
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-2 row-cols-xl-2 justify-content-center">
+                    {% for product in avail_products%}
+                        <div class="col-sm-12 col-md-6 mb-2">
+                            <div class="card">
+                                <div class="flex">
+                                    <img class="card-img-top" style="height: 150px; width: 150px" src="/img/product_{{product.id}}.jpg" alt="..." />
+                                    <div class="card-body flex" style="flex-direction: column;justify-content: space-between;">
+                                        <div>
+                                            <h6 class="card-title"><a href="/product/{{product.id}}">{{product.name}}</a></h6>
+                                        </div>
+                                        <div class="flex" style="justify-content: space-between; font-size: 0.9em;">
+                                            <div>
+                                                Starting From: ${{product.iMinPrice}}
+                                            </div>
+                                            <div>
+                                                Total Sales: {{product.minPriceIid}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    
+{% endblock %}

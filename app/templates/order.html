@@ -1,0 +1,38 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+    <br />
+
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Order <span class="text-secondary">#{{order_obj.id}}</span></h4>
+            <div class="card-text">
+                <ul class="list-unstyled">
+                    <li>User: <a href="/user/{{order_obj.user_id}}">{{order_obj.username}}</a> </li>
+                    <li>Order Date: {{order_obj.create_at}}</li>
+                    <li>Shipping Address: {{order_obj.address}}</li>
+                    <li>Tel: {{order_obj.tel}}</li>
+                    <li>Fulfillment: {{total_fulfill}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Items</h4>
+            <div>
+                {%import 'datatable.html' as t%}
+                {{t.datatable("order-purchase", purchase_obj_list)}}
+            </div>
+            <div class="text-right">
+                Total: ${{total_price}}
+            </div>
+        </div>
+    </div>
+
+    
+
+</div>
+
+
+{% endblock %}

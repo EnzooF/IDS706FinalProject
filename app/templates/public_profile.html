@@ -1,0 +1,140 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title"><span class="text-secondary">#{{user.id}} </span>{{user.firstname}} {{user.lastname}}</h4>
+      <div class="card-text" style="word-wrap: break-word;">
+        <ul>
+          <li>Money spent: ${{money_spent}}</li>
+          <li>Item Bought: {{items_bought}} Items</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  {% if is_seller %}
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Sells</h4>
+      <div class="card-text">
+        <ul>
+          <li>
+            Email: <a href="mailto:{{user.email}}">{{user.email}}</a>
+          </li>
+          <li>Sell Address: <a href="https://maps.google.com/?q={{user.sell_address}}">{{user.sell_address}}</a></li>
+        </ul>
+        {%import 'datatable.html' as t%}
+        {{t.datatable("sell-table", inventory_obj_list)}}
+        </div>
+        
+      </div>
+    </div>
+  {% if has_bought %}
+  {% if has_review %}
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title" id="my_review">My Review</h4>
+      <div class="card-text">
+          <div class="container">
+              <div class="row">
+                  <p><strong>Review</strong>: {{review[2]}}</p>
+              </div>
+              <div class="row">
+                  <p><strong>Rate</strong>: 
+                      {% for i in range(review[1]) %} 
+                      <i class="bi bi-star-fill"></i>
+                      {% endfor %}
+                      {% for i in range(5-review[1]) %} 
+                      <i class="bi bi-star"></i>
+                      {% endfor %}</p>
+              </div>
+              <div class="row">
+                <p><strong>Images</strong>:
+                <img data-src="/img/review_{{review[0]}}_0.jpg" style="height: 5em; width:5em;">
+                <img data-src="/img/review_{{review[0]}}_1.jpg" style="height: 5em; width:5em;">
+                <img data-src="/img/review_{{review[0]}}_2.jpg" style="height: 5em; width:5em;"></p>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a href="/review/seller/edit?sid={{user.id}}&redirect=seller">Edit Your Review</a>
+                </div>
+                <div class="col">
+                  <a href="/review/seller/remove?sid={{user.id}}&redirect=seller">Remove Your Review</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  {% else %}
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title" id="my_review">My Review</h4>
+      <div class="card-text">
+        <a href="/review/seller/submit?sid={{user.id}}&redirect=seller">Submit Your Review</a>
+        </div>
+      </div>
+    </div>
+  {% endif %}
+  {% endif %}
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Reviews</h4>
+      <div class="card-text">
+        {% if has_summary %}
+        <div class="container">
+          <div class="row">
+          <div class="col">
+            <p><strong>Total Review Amount</strong>: {{summary_review[1]}}</p>
+          </div>
+          <div class="col">
+            <p><strong>Average Review Rate</strong>: 
+            {% for i in range(summary_review[2]) %} 
+            <i class="bi bi-star-fill"></i>
+            {% endfor %}
+            {% if has_half %}
+              <i class="bi bi-star-half"></i>
+              {% for i in range(5-summary_review[2]-1) %} 
+              <i class="bi bi-star"></i>
+              {% endfor %}
+            {% else %}
+              {% for i in range(5-summary_review[2]) %} 
+              <i class="bi bi-star"></i>
+              {% endfor %}
+            {% endif %}    
+            <span class="ml-2">{{"%.2f"|format(summary_review[0])}}/5.00</span></p>
+        </div>
+      </div>
+      </div>
+      {% else %}
+        <div class="container">
+          <div class="row">
+          <div class="col">
+            <p><strong>Total Review Amount</strong>: 0</p>
+          </div>
+          <div class="col">
+            <p><strong>Average Review Rate</strong>: Unknown</p>
+          </div>
+        </div>
+      {% endif %}
+      <br />
+      <div class="card-text">
+          {%import 'datatable.html' as t%}
+          {{t.datatable("public-user-review", review_obj_list)}}
+      </div>
+    </div>
+  </div>
+
+  </table>
+  {% endif %}
+
+
+</div>
+</div>
+
+{% endblock %}
