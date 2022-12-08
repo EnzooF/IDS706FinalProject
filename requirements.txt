@@ -39,3 +39,4 @@ Werkzeug==2.0.1
 wrapt==1.13.3
 WTForms==2.3.3
 zipp==3.5.0
+swagger-ui-py
