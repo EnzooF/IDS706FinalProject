@@ -1,0 +1,296 @@
+swagger: '2.0'
+schemes:
+  - http
+basePath: /
+info:
+  version: 1.0.0
+  title: Mini Amazon API
+  description: Here's all the API for Mini Amazon
+
+paths:
+  /login:
+    get:
+      summary: show login page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Users
+    post:
+      summary: user login
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Users
+  /register:
+    get:
+      summary: show register page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Users
+    post:
+      summary: submit register
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Users
+  /logout:
+    get:
+      summary: user logout
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Users
+  /user:
+    get:
+      summary: show user profile
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Users
+  /search:
+    get:
+      summary: search product
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Product
+  /product_create:
+    get:
+      summary: show product creating page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Product
+    post:
+      summary: create product
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Product
+  /product_manage:
+    get:
+      summary: show product management page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Product
+    post:
+      summary: manage product
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Product
+  /orders:
+    get:
+      summary: show orders page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Orders
+  /rating_buyer:
+    get:
+      summary: get buyers rating
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Orders
+  /sell_history:
+    get:
+      summary: get selling history
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Orders
+
+  /review/product/submit:
+    get:
+      summary: show review page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Review
+    post:
+      summary: submit review
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Review
+
+  /review/product/edit:
+    get:
+      summary: show review page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Review
+    post:
+      summary: edit review
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Review
+  
+  /review/product/remove:
+    get:
+      summary: show review page
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Review
+    post:
+      summary: remove review
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Review
+
+  /cart:
+    get:
+      summary: check items in cart
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Cart
+    post:
+      summary: place items in cart
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Cart
+
+  /removeCart:
+    post:
+      summary: remove items from cart
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Cart
+
+  /add_to_cart:
+    post:
+      summary: add items into cart
+      produces:
+        - application/text
+      responses:
+        '200':
+          description: OK
+        '400':
+          description: Invalid Request
+      tags:
+        - Cart
