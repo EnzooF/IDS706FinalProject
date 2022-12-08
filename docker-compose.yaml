@@ -22,8 +22,8 @@ services:
     depends_on:
       - db
   mini-amazon:
-    image: ghcr.io/motianjun4/mini_amazon:master
-    # build: ./
+    # image: ghcr.io/motianjun4/mini_amazon:master
+    build: ./
     ports:
       - "${SERVE_PORT}:5001"
     restart: always
@@ -54,13 +54,13 @@ services:
     depends_on:
       - minio
     
-  watchtower:
-    image: index.docker.io/containrrr/watchtower:latest
-    environment:
-      WATCHTOWER_LABEL_ENABLE: 1
-      WATCHTOWER_POLL_INTERVAL: 10
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ~/.docker/config.json:/config.json
-    restart: always
+  # watchtower:
+  #   image: index.docker.io/containrrr/watchtower:latest
+  #   environment:
+  #     WATCHTOWER_LABEL_ENABLE: 1
+  #     WATCHTOWER_POLL_INTERVAL: 10
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #     - ~/.docker/config.json:/config.json
+  #   restart: always
   

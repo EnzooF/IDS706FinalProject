@@ -9,6 +9,7 @@ class Config(object):
                 os.environ.get('DB_HOST'),
                 os.environ.get('DB_PORT'),
                 os.environ.get('DB_NAME'))
+    print("alchemy:", SQLALCHEMY_DATABASE_URI)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     DEBUG = True
     

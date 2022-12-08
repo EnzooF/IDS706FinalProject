@@ -18,3 +18,5 @@ gen_model:
 	sqlacodegen "postgresql://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}" --tables purchase
 up:
 	docker-compose up -d
+build:
+	docker-compose build
