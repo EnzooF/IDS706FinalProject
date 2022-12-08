@@ -1,8 +1,8 @@
 # Mini-Amazon
-This is a group final project for Duke IDS 706 course.
-[Demo Link](http://vcm-30124.vm.duke.edu:8001/).
-[Project Reference](https://github.com/EnzooF/mini_amazon).
-[Swagger UI](http://localhost:5001/api/doc#/).
+This is a group final project for Duke IDS 706 course.  
+[Demo Link](http://vcm-30124.vm.duke.edu:8001/)  
+[Project Reference](https://github.com/EnzooF/mini_amazon)  
+[Swagger UI](http://localhost:5001/api/doc#/)  
 
 All passwords and tokens in the history commits have been removed and revoked. All new passwords and tokens are randomly generated.  
 
