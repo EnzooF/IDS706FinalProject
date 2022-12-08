@@ -1,10 +1,14 @@
 # Mini-Amazon
 This is a group final project for Duke IDS 706 course.
-The original version of the project can refer https://github.com/EnzooF/mini_amazon
+[Demo Link](http://vcm-30124.vm.duke.edu:8001/).
+[Project Reference](https://github.com/EnzooF/mini_amazon).
+[Swagger UI](http://localhost:5001/api/doc#/).
 
 All passwords and tokens in the history commits have been removed and revoked. All new passwords and tokens are randomly generated.  
 
 # Team Members
+- Xushan Qing (xq47)
+- Hongyang Li (hl404)
 - Dingzhou Wang (dw299)
 - Enmiao Feng (ef141)
 
